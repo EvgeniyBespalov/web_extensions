@@ -1,0 +1,35 @@
+{
+
+  "manifest_version": 2,
+  "name": "Borderify",
+  "version": "1.0.7",
+
+  "description": "Adds a red border to all webpages matching mozilla.org.",
+
+  "icons": {
+    "36": "icons/black_square_36.png"
+  },
+  "permissions": [
+        "tabs"
+    ],
+  "launch": {
+        "web_url": "http://r0.ru"
+    },
+  "browser_action": {
+    "default_icon": {
+      "36": "icons/black_square_36.png"
+    },
+    "default_title": "Whereami?"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["borderify.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["index.js"]
+  }
+
+}
